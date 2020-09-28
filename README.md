@@ -5,7 +5,7 @@
 ### Feauture
 
 |name|usage|
-|+---+|+---+|
+|:---:|:---:|
 |file|to check what exactly your file is|
 |exiftool|to check the metadata of your file|
 |binwalk|to check if there is a hidden file inside|
