@@ -2,7 +2,7 @@
 
 ## Webservice apps that let's you do common enumeration on your file
 
-### Feauture
+### Feature
 
 |name|usage|
 |:---:|:---:|
