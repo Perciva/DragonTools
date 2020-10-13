@@ -12,7 +12,7 @@
 |foremost|to extract the hidden file|
 |strings|to check hidden string text|
 |hashsum|intergrity check|
-|hashdump|simple check of what your file is made of|
+|hexdump|simple check of what your file is made of|
 |tshark|check your network|
 |steghide|extract hidden message on your image file|
 |pngcheck|Test PNG image files for corruption, display size, type, compression info|
