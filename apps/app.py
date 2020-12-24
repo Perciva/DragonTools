@@ -9,7 +9,8 @@ dummyFileName = ''
 # Index
 @app.route('/')
 def index():
-	return render_template('index.html', title='Dashboard', exiftool=exiftool(dummyFileName), hashsum=hashsum(dummyFileName), file=file(dummyFileName), virustotal=virustotalCheck(dummyFileName))
+	return render_template('index.html', title='Dashboard')
+	# return render_template('index.html', title='Dashboard', exiftool=exiftool(dummyFileName), hashsum=hashsum(dummyFileName), file=file(dummyFileName), virustotal=virustotalCheck(dummyFileName))
 
 
 # Form stuff
