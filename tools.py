@@ -2,6 +2,7 @@ import subprocess
 import hashlib
 import requests
 from bs4 import BeautifulSoup as bs
+import json
 
 def exiftool(fname):
 	args = ['exiftool', fname]
@@ -43,27 +44,40 @@ def file(fname):
 		return out.decode('utf-8')
 	return err.decode('utf-8')
 
+def binwalk(fname):
+	args = ['binwalk', fname]
+	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
+	out, err = proc.communicate()
+	if out:
+		return out.decode('utf-8')
+	return err.decode('utf-8')
+
+def strings(fname):
+	args = ['strings', fname, '| tail']
+	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
+	out, err = proc.communicate()
+	if out:
+		return out.decode('utf-8')
+	return err.decode('utf-8')
+
 def virustotalCheck(fname):
 	sha256sum = sha256(fname)
-	headers =  {
-		'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:83.0) Gecko/20100101 Firefox/83.0',
-		'X-Tool': 'vt-ui-main',
-		'X-VT-Anti-Abuse-Header': 'MTYwNjkyMDM3NjAtWkc5dWRDQmlaU0JsZG1scy0xNjA2NDg0NDc4Ljg3Mw==',
-		'Accept-Ianguage': 'en-US,en;q=0.9,es;q=0.8'
-	}
-	prompt = requests.get(f'https://www.virustotal.com/ui/files/{sha256sum}', headers=headers)
-	positives = int(prompt.json()['data']['attributes']['last_analysis_stats']['malicious'])
-	total = int(prompt.json()['data']['attributes']['last_analysis_stats']['undetected']) + positives
-	if positives:
-		result = f"""
-			<h4 class="small font-weight-bold">VirusTotal<span
-		            class="float-right">{int(positives/total*100)}%</span></h4>
-		    <div class="progress mb-4">
-		        <div class="progress-bar bg-danger" role="progressbar" style="width: {int(positives/total*100)}%"
-		            aria-valuenow="{positives}" aria-valuemin="0" aria-valuemax="{total}"></div>
-		    </div>
-		"""
-		return result
-	else:
-		return "clear"
-
+	# url = 'https://www.virustotal.com/vtapi/v2/file/report'
+	# params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
+	# response = requests.get(url, params=params)
+	with open("sample.json") as f:
+		response = f.read()
+	print(type(response))
+	print(type(json.loads(response)))
+	return json.loads(response)
+	# return response.items()
+	# return str(response.json()['positives']) + ' Positives, out of : ' + str(response.json()['total']) + ' Total<br><a href="' + str(response.json()['permalink'])+ '">Check It out here</a>'
+	# return response.json()
+	# return response.json()
+	# print(response.json()['scans']['Bkav'])
+	# found = []
+	# for result in response.json()['scans']:
+	# 	return result
+	# 	if result['detected'] == True:
+	# 		found.append(result)
+	# return found

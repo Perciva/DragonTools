@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content%}
+{% extends 'base.html' %} {% block content%}
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -15,7 +13,7 @@
     <div class="row">
 
         <!-- Content Column -->
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-12 mb-4">
 
             <!-- Project Card Example -->
             <div class="card shadow mb-4">
@@ -31,7 +29,7 @@
                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     -->
-                    {{ virustotal | safe }}
+                    {{ virustotal }}
                     <!--
                     <h4 class="small font-weight-bold">Sales Tracking <span
                             class="float-right">40%</span></h4>
@@ -57,121 +55,104 @@
                         <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    -->
+                    
                 </div>
             </div>
 
             <!-- Color System -->
-            <div class="row">
-                <div class="col-lg-12 mb-4">
-                    <div class="card bg-success text-white shadow">
-                        <div class="card-body">
-                            File
-                            <div class="text-white-75 small">{{ file }}</div>
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    File
+                                    <div class="text-white-75 small">{{ file }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="card bg-info text-white shadow">
+                                <div class="card-body">
+                                    HashSum {% for hash in hashsum %}
+                                    <!-- <div class="text-white-50 small">{{ hash[0] }}</div> -->
+                                    <div class="text-white-75 small">{{ hash[0] }} : {{ hash[1] }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="card bg-primary text-white shadow">
+                                <div class="card-body">
+                                    Exiftool {% for exif in exiftool %}
+                                    <div class="text-white-75 small">{{ exif }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="card bg-primary text-white shadow">
+                                <div class="card-body">
+                                    Binwalk {% for b in binwalk %}
+                                    <div class="text-white-75 small">{{ b }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-4">
+                            <div class="card bg-primary text-white shadow">
+                                <div class="card-body">
+                                    Foremost
+                                    <div class="text-white-75 small">{{ foremost }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-warning text-white shadow">
+                                <div class="card-body">
+                                    Strings
+                                    <div class="text-white-50 small">{{ strings }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-danger text-white shadow">
+                                <div class="card-body">
+                                    Danger
+                                    <div class="text-white-50 small">#e74a3b</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-secondary text-white shadow">
+                                <div class="card-body">
+                                    Secondary
+                                    <div class="text-white-50 small">#858796</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-light text-black shadow">
+                                <div class="card-body">
+                                    Light
+                                    <div class="text-black-50 small">#f8f9fc</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-4">
+                            <div class="card bg-dark text-white shadow">
+                                <div class="card-body">
+                                    Dark
+                                    <div class="text-white-50 small">#5a5c69</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="card bg-info text-white shadow">
-                        <div class="card-body">
-                            HashSum
-                            {% for hash in hashsum %}
-                                <!-- <div class="text-white-50 small">{{ hash[0] }}</div> -->
-                                <div class="text-white-75 small">{{ hash[0] }} : {{ hash[1] }}</div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 mb-4">
-                    <div class="card bg-primary text-white shadow">
-                        <div class="card-body">
-                            Exiftool
-                            {% for exif in exiftool  %}
-                                <div class="text-white-75 small">{{ exif }}</div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-warning text-white shadow">
-                        <div class="card-body">
-                            Warning
-                            <div class="text-white-50 small">#f6c23e</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-danger text-white shadow">
-                        <div class="card-body">
-                            Danger
-                            <div class="text-white-50 small">#e74a3b</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-secondary text-white shadow">
-                        <div class="card-body">
-                            Secondary
-                            <div class="text-white-50 small">#858796</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-light text-black shadow">
-                        <div class="card-body">
-                            Light
-                            <div class="text-black-50 small">#f8f9fc</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-dark text-white shadow">
-                        <div class="card-body">
-                            Dark
-                            <div class="text-white-50 small">#5a5c69</div>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
 
         </div>
+        <!-- /.container-fluid -->
 
-        <div class="col-lg-6 mb-4">
-
-            <!-- Illustrations -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
-                </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                            src="{{ url_for('static', filename='img/undraw_posting_photo.svg') }}" alt="">
-                    </div>
-                    <p>Add some quality, svg illustrations to your project courtesy of <a
-                            target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
-                        constantly updated collection of beautiful svg images that you can use
-                        completely free and without attribution!</p>
-                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
-                        unDraw &rarr;</a>
-                </div>
-            </div>
-
-            <!-- Approach -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                </div>
-                <div class="card-body">
-                    <p>DragonTools is a website we made because of our project :'(</p>
-                    <p class="mb-0">We Hope that what we made might be useful for anyone using it :)</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-<!-- /.container-fluid -->
-
-{% endblock %}
+        {% endblock %}

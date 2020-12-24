@@ -3,15 +3,29 @@ from tools import *
 
 app = Flask(__name__)
 
-
-dummyFileName = ''
+dummyFileName = 'dummy'
+# dummyFileName = "DummyFile.txt"
 
 # Index
 @app.route('/')
 def index():
-	return render_template('index.html', title='Dashboard')
+	# return render_template('index.html', title='Dashboard')
+	return render_template('index.html', title='Dashboard', virustotal=virustotalCheck(dummyFileName))
+	# return render_template('index.html', title='Dashboard', virustotal=virustotalCheck(dummyFileName), binwalk=binwalk(dummyFileName))
 	# return render_template('index.html', title='Dashboard', exiftool=exiftool(dummyFileName), hashsum=hashsum(dummyFileName), file=file(dummyFileName), virustotal=virustotalCheck(dummyFileName))
 
+#navbar
+@app.route('/image')
+def _image():
+	return render_template('image.html')
+
+@app.route('/archive')
+def _archive():
+	return render_template('archive.html')
+
+@app.route('/misc')
+def _misc():
+	return render_template('misc.html')
 
 # Form stuff
 @app.route('/login', methods=['GET', 'POST'])
