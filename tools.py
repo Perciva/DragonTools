@@ -2,7 +2,6 @@ import subprocess
 import hashlib
 import requests
 from bs4 import BeautifulSoup as bs
-import json
 
 def exiftool(fname):
 	args = ['exiftool', fname]
@@ -62,22 +61,12 @@ def strings(fname):
 
 def virustotalCheck(fname):
 	sha256sum = sha256(fname)
-	# url = 'https://www.virustotal.com/vtapi/v2/file/report'
-	# params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
-	# response = requests.get(url, params=params)
-	with open("sample.json") as f:
-		response = f.read()
-	print(type(response))
-	print(type(json.loads(response)))
-	return json.loads(response)
-	# return response.items()
+	url = 'https://www.virustotal.com/vtapi/v2/file/report'
+	params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
+	response = requests.get(url, params=params)
 	# return str(response.json()['positives']) + ' Positives, out of : ' + str(response.json()['total']) + ' Total<br><a href="' + str(response.json()['permalink'])+ '">Check It out here</a>'
-	# return response.json()
-	# return response.json()
-	# print(response.json()['scans']['Bkav'])
-	# found = []
-	# for result in response.json()['scans']:
-	# 	return result
-	# 	if result['detected'] == True:
-	# 		found.append(result)
-	# return found
+	found = []
+	for attr, value in response.json()['scans'].items():
+		if value['detected'] == True:
+			found.append(attr)
+	return found

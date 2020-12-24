@@ -3,7 +3,7 @@ from tools import *
 
 app = Flask(__name__)
 
-dummyFileName = 'dummy'
+dummyFileName = 'dummyVirus'
 # dummyFileName = "DummyFile.txt"
 
 # Index
