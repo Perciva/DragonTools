@@ -1,6 +1,7 @@
 import subprocess
 import hashlib
 import requests
+import json
 from bs4 import BeautifulSoup as bs
 
 def exiftool(fname):
@@ -64,7 +65,7 @@ def virustotalCheck(fname):
 	# url = 'https://www.virustotal.com/vtapi/v2/file/report'
 	# params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
 	# response = requests.get(url, params=params)
-	with open('sample.txt', 'r') as f:
+	with open('temp/sample.txt', 'r') as f:
 		response = f.readline()
 	# convert json str to array
 	response = json.loads(response)
@@ -75,4 +76,3 @@ def virustotalCheck(fname):
 		if result.get("detected") == True:
 			hits.append({key: val})
 	return hits
-	

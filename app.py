@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request
-from tools import *
+from lib.tools import *
 
 app = Flask(__name__)
 
-dummyFileName = 'dummyVirus'
-# dummyFileName = "DummyFile.txt"
+dummyFileName = 'temp/dummyVirus'
+# dummyFileName = "temp/DummyFile.txt"
 
 # main pages
 @app.route('/')
