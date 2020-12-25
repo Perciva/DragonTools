@@ -76,6 +76,16 @@ def xxd(fname):
 		return out.decode('utf-8').split('\n')
 	return err.decode('utf-8').split('\n')
 
+def foremost(fname):
+	args = ['foremost', fname]
+	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
+	#args2 = ['strings', '/output/audit.txt']
+	#proc2 = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
+	out, err = proc2.communicate()
+	if out:
+		return out.decode('utf-8').split('\n')
+	return err.decode('utf-8').split('\n')
+
 def virustotalCheck(fname):
 	# sha256sum = sha256(fname)
 	# url = 'https://www.virustotal.com/vtapi/v2/file/report'
