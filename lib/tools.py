@@ -49,16 +49,24 @@ def binwalk(fname):
 	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
 	out, err = proc.communicate()
 	if out:
-		return out.decode('utf-8')
-	return err.decode('utf-8')
+		return out.decode('utf-8').split('\n')
+	return err.decode('utf-8').split('\n')
 
 def strings(fname):
 	args = ['strings', fname, '| tail']
 	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
 	out, err = proc.communicate()
 	if out:
-		return out.decode('utf-8')
-	return err.decode('utf-8')
+		return out.decode('utf-8').split('\n')
+	return err.decode('utf-8').split('\n')
+
+def pngcheck(fname):
+	args = ['pngcheck', '-7', fname]
+	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
+	out,err = proc.communicate()
+	if out:
+		return out.decode('utf-8').split('\n')
+	return err.decode('utf-8').split('\n')
 
 def virustotalCheck(fname):
 	# sha256sum = sha256(fname)

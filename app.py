@@ -3,8 +3,9 @@ from lib.tools import *
 
 app = Flask(__name__)
 
-dummyFileName = 'temp/dummyVirus'
+# dummyFileName = 'temp/dummyVirus'
 # dummyFileName = "temp/DummyFile.txt"
+dummyFileName = 'temp/cobacoba.png'
 
 # main pages
 @app.route('/')
@@ -13,11 +14,11 @@ def index():
 
 @app.route('/general')
 def general():
-	return render_template('main/general.html', title='Dashboard', exiftool=exiftool(dummyFileName), hashsum=hashsum(dummyFileName), file=file(dummyFileName), virustotal=virustotalCheck(dummyFileName))
+	return render_template('main/general.html', title='Dashboard', exiftool=exiftool(dummyFileName), hashsum=hashsum(dummyFileName), file=file(dummyFileName), virustotal=virustotalCheck(dummyFileName), strings=strings(dummyFileName), binwalk=binwalk(dummyFileName))
 
 @app.route('/image')
 def image():
-	return render_template('main/image.html')
+	return render_template('main/image.html', title='Image', pngcheck=pngcheck(dummyFileName))
 
 @app.route('/archive')
 def archive():

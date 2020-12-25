@@ -112,8 +112,9 @@
                 <div class="col-lg-6 mb-4">
                     <div class="card bg-warning text-white shadow">
                         <div class="card-body">
-                            Strings
-                            <div class="text-white-50 small">{{ strings }}</div>
+                            Strings {% for str in strings%}
+                            <div class="text-white-50 small">{{ str }}</div>
+			    {% endfor %}
                         </div>
                     </div>
                 </div>
