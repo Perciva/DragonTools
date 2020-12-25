@@ -68,6 +68,14 @@ def pngcheck(fname):
 		return out.decode('utf-8').split('\n')
 	return err.decode('utf-8').split('\n')
 
+def xxd(fname):
+	args = ['xxd', fname]
+	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
+	out,err = proc.communicate()
+	if out:
+		return out.decode('utf-8').split('\n')
+	return err.decode('utf-8').split('\n')
+
 def virustotalCheck(fname):
 	# sha256sum = sha256(fname)
 	# url = 'https://www.virustotal.com/vtapi/v2/file/report'

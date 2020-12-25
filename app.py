@@ -22,7 +22,7 @@ def image():
 
 @app.route('/archive')
 def archive():
-	return render_template('main/archive.html')
+	return render_template('main/archive.html', title='Archive', xxd=xxd(dummyFileName))
 
 @app.route('/misc')
 def misc():
