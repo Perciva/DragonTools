@@ -18,3 +18,41 @@
 |pngcheck|test PNG image files for corruption, display size, type, compression info|
 |zsteg|check for hidden message in lsb or msb|
 |stegsolve|check rgb spectrum|
+
+### progress
+
+- [ ] laporan
+    - [ ] pembagian tugas
+- [ ] produk
+    - [ ] frontend
+    - [ ] backend
+        - [ ] general
+            - [ ] file upload
+            - [ ] file
+            - [ ] exiftool
+            - [ ] binwalk
+            - [ ] foremost
+            - [ ] virustotal
+            - [ ] hash sums
+            - [ ] strings
+                - [ ] search
+                - [ ] preview
+                - [ ] full output download
+            - [ ] xxd
+                - [ ] search
+                - [ ] preview
+                - [ ] full output download
+        - [ ] image
+            - [ ] file upload
+            - [ ] steghide
+            - [ ] zsteg
+            - [ ] pngcheck
+            - [ ] stegsolve (???)
+        - [ ] archive
+            - [ ] file upload
+        - [ ] misc
+            - [ ] file upload
+            - [ ] tshark
+                - [ ] search
+                - [ ] preview
+                - [ ] full output download
