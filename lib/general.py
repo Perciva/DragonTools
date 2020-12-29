@@ -1,4 +1,7 @@
-import tools
+import subprocess
+import requests
+import json
+from .tools import *
 
 def file(fname):
 	args = ['file', fname]
@@ -36,7 +39,7 @@ def foremost(fname):
 
 
 def virustotalCheck(fname):
-	# sha256sum = sha256(fname)
+	sha256sum = sha256(fname)
 	# url = 'https://www.virustotal.com/vtapi/v2/file/report'
 	# params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
 	# response = requests.get(url, params=params)

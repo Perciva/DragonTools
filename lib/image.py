@@ -1,4 +1,4 @@
-
+import subprocess
 
 def pngcheck(fname):
 	args = ['pngcheck', '-7', fname]

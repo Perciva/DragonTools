@@ -18,14 +18,30 @@
                 </div>
                 <div class="card-body">
                     DragonTools is a qweqweqwe
+                    {{ session }}
                 </div>
             </div>
             <!-- Color System -->
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-danger text-white shadow">
+            <div class="col-lg-12 mb-4">
+                <div class="card bg-success text-white shadow">
                     <div class="card-body">
-                        Danger
-                        <div class="text-white-50 small">#e74a3b</div>
+                        {% if session['userfile'] %}
+                        <p>Your recently uploaded file name is "{{ session['userfile'] }}"</p>
+                        <div class="text-white-75 small">
+                            You can now start analyzing your files with the menu
+                            on your left, or you can upload a new file
+                        </div>
+                        <p></p>
+                        <p>Upload a new file</p>
+                        {% else %}
+                        <p>Upload a file</p>
+                        {% endif %}
+                        <div class="text-white-75 small">
+                            <form method="POST" enctype="multipart/form-data">
+                                <input type="file" name="file">
+                                <input type="submit" value="Upload">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

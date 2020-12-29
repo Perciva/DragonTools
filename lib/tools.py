@@ -1,8 +1,4 @@
-import subprocess
 import hashlib
-import requests
-import json
-from bs4 import BeautifulSoup as bs
 
 def md5(fname):
 	hash_md5 = hashlib.md5()

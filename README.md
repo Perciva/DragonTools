@@ -26,33 +26,47 @@
 - [ ] produk
     - [ ] frontend
     - [ ] backend
+        - [x] file upload
         - [ ] general
-            - [ ] file upload
-            - [ ] file
+            - [x] file
             - [ ] exiftool
+                - [x] output
+                - [ ] table view
             - [ ] binwalk
+                - [x] output
+                - [ ] table view
             - [ ] foremost
             - [ ] virustotal
+                - [x] output
+                - [ ] list view
             - [ ] hash sums
+                - [x] output
+                - [ ] table view
             - [ ] strings
+                - [x] output
                 - [ ] search
                 - [ ] preview
                 - [ ] full output download
             - [ ] xxd
+                - [x] output
                 - [ ] search
                 - [ ] preview
                 - [ ] full output download
         - [ ] image
-            - [ ] file upload
             - [ ] steghide
             - [ ] zsteg
-            - [ ] pngcheck
+            - [x] pngcheck
             - [ ] stegsolve (???)
-        - [ ] archive
-            - [ ] file upload
         - [ ] misc
-            - [ ] file upload
             - [ ] tshark
+                - [ ] output
                 - [ ] search
                 - [ ] preview
                 - [ ] full output download
+
+#### known issues
+
+##### frontend
+- card colors are temporary, either make it random everytime, or static
+##### backend
+- uploaded files are never deleted

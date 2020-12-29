@@ -1,48 +1,74 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from lib.general import *
 from lib.image import *
 from lib.misc import *
+from werkzeug.utils import secure_filename
+import os
 
+# configs can be moved to a safer location on production
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = './uploads'
+# 16mb max file upload
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.secret_key = b'ay whos joe? joe mama OOOHHHHHHH123124387dsfs098783()*&*)@$^8s'
 
-# dummyFileName = 'temp/dummyVirus'
-# dummyFileName = "temp/DummyFile.txt"
-dummyFileName = 'temp/cobacoba.png'
+ALLOWED_EXTENSIONS = {
+		'txt', 'pdf',
+		'png', 'jpg', 'jpeg', 'gif',
+		'pcap', 'pcapng',
+		'zip', 'rar'
+	}
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 # main pages
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
+	if request.method == 'POST':
+		file = request.files['file']
+		if file and file.filename != '' and allowed_file(file.filename):
+			filename = secure_filename(file.filename)
+			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			# replace old session
+			session['userfile'] = filename
 	return render_template('index.html')
 
 @app.route('/general')
 def general():
-	return render_template('main/general.html',
-		title='Dashboard',
-		exiftool=exiftool(dummyFileName),
-		hashsum=hashsum(dummyFileName),
-		file=file(dummyFileName),
-		virustotal=virustotalCheck(dummyFileName),
-		strings=strings(dummyFileName),
-		binwalk=binwalk(dummyFileName),
-		xxd=xxd(dummyFileName)
-	)
+	try:
+		filename = "uploads/"+session['userfile']
+		return render_template('main/general.html',
+			title='Dashboard',
+			exiftool=exiftool(filename),
+			hashsum=hashsum(filename),
+			file=file(filename),
+			virustotal=virustotalCheck(filename),
+			strings=strings(filename),
+			binwalk=binwalk(filename),
+			xxd=xxd(filename)
+		)
+	except:
+		return render_template('main/general.html')
 
 @app.route('/image')
 def image():
-	return render_template('main/image.html',
-		title='Image',
-		pngcheck=pngcheck(dummyFileName)
-	)
-
-@app.route('/archive')
-def archive():
-	return render_template('main/archive.html',
-		title='Archive',
-	)
+	try:
+		filename = "uploads/"+session['userfile']
+		return render_template('main/image.html',
+			title='Image',
+			pngcheck=pngcheck(filename)
+		)
+	except:
+		return render_template('main/image.html')
 
 @app.route('/misc')
 def misc():
-	return render_template('main/misc.html')
+	try:
+		filename = "uploads/"+session['userfile']
+		return render_template('main/misc.html')
+	except:
+		return render_template('main/misc.html')
 
 # Error
 @app.route('/404')
