@@ -74,14 +74,4 @@ def virustotalCheck(fname):
 	else:
 		return response.json()['positives'], response.json()['total'], response.json()['permalink']
 
-# API KEY: 6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e
 
-# https://www.virustotal.com/gui/user/asdasdasdasdasdasdasdasdasd/apikey
-# email : gevosiv141@nowdigit.com
-# pass : gevosiv141@nowdigit.com
-
-'''
-need positive out of total
-source that found positives
-permalink to the virustotal page
-'''
