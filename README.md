@@ -59,6 +59,7 @@
             - [ ] tshark
                 - [ ] output
                 - [ ] pake overflow: scroll
+        - [ ] donate
 
 #### known issues
 
