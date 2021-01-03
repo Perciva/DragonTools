@@ -27,7 +27,8 @@
                         {% if session['userfile'] %}
                         <p>Your recently uploaded file name is "{{ session['userfile'] }}"</p>
                         <img src="{{ url_for('uploads', filename=session['userfile']) }}"
-                            style="max-width: 100%; margin-bottom: 1em;">
+                            style="max-width: 100%; margin-bottom: 1em;"
+                            alt="No preview available.">
                         <br>
                         <div class="text-white-75">
                             You can now start analyzing your files with the menu
