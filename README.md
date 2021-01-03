@@ -24,8 +24,9 @@
 - [ ] laporan
     - [ ] pembagian tugas
 - [ ] produk
-    - [ ] frontend
-        - [ ] font gedein
+    - [x] frontend
+        - [x] font gedein
+        - [x] warna yg konsisten
     - [ ] backend
         - [x] file upload
         - [ ] general
@@ -44,12 +45,12 @@
             - [ ] hash sums
                 - [x] output
                 - [ ] table view
-            - [ ] strings
+            - [x] strings
                 - [x] output
-                - [ ] pake overflow: scroll
-            - [ ] xxd
+                - [x] pake overflow: scroll
+            - [x] xxd
                 - [x] output
-                - [ ] pake overflow: scroll
+                - [x] pake overflow: scroll
         - [ ] image
             - [ ] steghide
             - [x] zsteg
