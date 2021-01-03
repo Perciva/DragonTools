@@ -23,7 +23,7 @@
                                 File
                             </div>
                             <div class="card-body">
-                                <div class="text-white-75">{{ file }}</div>
+                                <div class="text-white-75 text-monospace">{{ file }}</div>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                             </div>
                             <div class="card-body">
                                 {% for exif in exiftool %}
-                                    <div class="text-white-75">{{ exif }}</div>
+                                    <div class="text-white-75 text-monospace">{{ exif }}</div>
                                 {% endfor %}
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="card-body">
                                 {% for b in binwalk %}
-                                    <div class="text-white-75">{{ b }}</div>
+                                    <div class="text-white-75 text-monospace">{{ b }}</div>
                                 {% endfor %}
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                             </div>
                             <div class="card-body">
                                 {% for foremost in foremost %}
-                                    <div class="text-white-75">{{ foremost }}</div>
+                                    <div class="text-white-75 text-monospace">{{ foremost }}</div>
                                 {% endfor %}
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                 Virustotal
                             </div>
                             <div class="card-body">
-                                <div class="text-white-75">{{ virustotal }}</div>
+                                <div class="text-white-75 text-monospace">{{ virustotal }}</div>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                             </div>
                             <div class="card-body">
                                 {% for hash in hashsum %}
-                                    <div class="text-white-75">{{ hash[0] }} : {{ hash[1] }}</div>
+                                    <div class="text-white-75 text-monospace">{{ hash[0] }} : {{ hash[1] }}</div>
                                 {% endfor %}
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                             </div>
                             <div class="card-body pre-scrollable">
                                 {% for str in strings %}
-                                    <div class="text-white-75">{{ str }}</div>
+                                    <div class="text-white-75 text-monospace">{{ str }}</div>
                                 {% endfor %}
                             </div>
                             <div class="card-footer bg-primary">
@@ -107,7 +107,7 @@
                             </div>
                             <div class="card-body pre-scrollable">
                                 {% for xxd in xxd %}
-                                    <div class="text-white-75">{{ xxd }}</div>
+                                    <div class="text-white-75 text-monospace">{{ xxd }}</div>
                                 {% endfor %}
                             </div>
                             <div class="card-footer bg-primary">
