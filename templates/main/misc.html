@@ -25,6 +25,11 @@
                                 <div class="text-white-75 text-monospace">{{ tshark }}</div>
                             </div>
                             <div class="card-footer bg-primary">
+                                {% for tshark in tshark %}
+                                    <div class="text-white-75">{{ tshark }}</div>
+                                {% endfor %}
+                            </div>
+                            <div class="card-footer bg-primary">
                                 Search with ctrl+f
                             </div>
                         </div>
