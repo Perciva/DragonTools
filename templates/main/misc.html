@@ -21,12 +21,9 @@
                             <div class="card-header font-weight-bold bg-primary">
                                 Tshark
                             </div>
-                            <div class="card-body">
-                                <div class="text-white-75 text-monospace">{{ tshark }}</div>
-                            </div>
-                            <div class="card-footer bg-primary">
+                            <div class="card-body pre-scrollable">
                                 {% for tshark in tshark %}
-                                    <div class="text-white-75">{{ tshark }}</div>
+                                    <div class="text-white-75 text-monospace">{{ tshark }}</div>
                                 {% endfor %}
                             </div>
                             <div class="card-footer bg-primary">
