@@ -65,8 +65,23 @@ def virustotalCheck(fname):
 	params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
 	response = requests.get(url, params=params)
 	# return str(response.json()['positives']) + ' Positives, out of : ' + str(response.json()['total']) + ' Total<br><a href="' + str(response.json()['permalink'])+ '">Check It out here</a>'
-	found = []
-	for attr, value in response.json()['scans'].items():
-		if value['detected'] == True:
-			found.append(attr)
-	return found
+	if response.json()['positives'] > 0:
+		found = []
+		for attr, value in response.json()['scans'].items():
+			if value['detected'] == True:
+				found.append(attr)
+		return response.json()['positives'], response.json()['total'], response.json()['permalink'], found
+	else:
+		return response.json()['positives'], response.json()['total'], response.json()['permalink']
+
+# API KEY: 6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e
+
+# https://www.virustotal.com/gui/user/asdasdasdasdasdasdasdasdasd/apikey
+# email : gevosiv141@nowdigit.com
+# pass : gevosiv141@nowdigit.com
+
+'''
+need positive out of total
+source that found positives
+permalink to the virustotal page
+'''

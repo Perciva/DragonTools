@@ -29,7 +29,6 @@
                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     -->
-                    {{ virustotal }}
                     <!--
                     <h4 class="small font-weight-bold">Sales Tracking <span
                             class="float-right">40%</span></h4>
@@ -113,14 +112,27 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 mb-4">
+                        {% if virustotal[0] > 0 %}
+                        <div class="col-lg-12 mb-4">
                             <div class="card bg-danger text-white shadow">
                                 <div class="card-body">
-                                    Danger
-                                    <div class="text-white-50 small">#e74a3b</div>
+                                    Virustotal
+                                    <div class="text-white-75 small">{{ virustotal[0] }} positives out of {{ virustotal[1] }} total sources</div>
+                                    <div class="text-white-75 small">Sources that says positives: {{ virustotal[3] }}</div>
+                                    <div class="text-white-75 small">Check straight from virustotal: <a href="{{ virustotal[2] }}">click here</a></div>
                                 </div>
                             </div>
                         </div>
+                        {% else %}
+                        <div class="col-lg-12 mb-4">
+                            <div class="card bg-success text-white shadow">
+                                <div class="card-body">
+                                    Virustotal
+                                    <div class="text-white-75 small">Virustotal didn't find anything suspicious with this file</div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
                         <div class="col-lg-6 mb-4">
                             <div class="card bg-secondary text-white shadow">
                                 <div class="card-body">
