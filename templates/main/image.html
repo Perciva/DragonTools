@@ -19,36 +19,46 @@
                 <!-- Color System -->
                 <div class="row">
                     <div class="col-lg-12 mb-4">
-                        <div class="card bg-success text-white shadow">
-                            <div class="card-body">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
                                 Steghide
-                                <div class="text-white-75 small">{{ file }}</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-white-75">{{ file }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-12 mb-4">
-                        <div class="card bg-info text-white shadow">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
+                                Zsteg
+                            </div>
                             <div class="card-body">
-                                Zsteg {% for zsteg in zsteg %}
-                                <div class="text-white-75 small">{{ zsteg }}</div>
+                                {% for zsteg in zsteg %}
+                                    <div class="text-white-75">{{ zsteg }}</div>
                                 {% endfor %}
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-12 mb-4">
-                        <div class="card bg-primary text-white shadow">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
+                                Pngcheck
+                            </div>
                             <div class="card-body">
-                                Pngcheck {% for png in pngcheck %}
-                                <div class="text-white-75 small">{{ png }}</div>
+                                {% for png in pngcheck %}
+                                    <div class="text-white-75">{{ png }}</div>
                                 {% endfor %}
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-12 mb-4">
-                        <div class="card bg-primary text-white shadow">
-                            <div class="card-body">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
                                 Stegsolve
-                                <div class="text-white-75 small">{{ stegsolve }}</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-white-75">{{ stegsolve }}</div>
                             </div>
                         </div>
                     </div>

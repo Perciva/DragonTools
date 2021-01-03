@@ -64,7 +64,6 @@
 #### known issues
 
 ##### frontend
-- card colors are temporary, either make it random everytime, or static
-- font kekecilan / terlalu datar
+- currently none
 ##### backend
 - uploaded files are never deleted
