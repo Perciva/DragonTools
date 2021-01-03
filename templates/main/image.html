@@ -1,0 +1,67 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Image</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Content Column -->
+        <div class="col-lg-12 mb-4">
+            {% if session['userfile'] is not defined %}
+                {% include 'components/whoopsie.html' %}
+            {% else %}
+                <!-- Color System -->
+                <div class="row">
+                    <div class="col-lg-12 mb-4">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
+                                Steghide
+                            </div>
+                            <div class="card-body">
+                                <div class="text-white-75 text-monospace">{{ file }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-4">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
+                                Zsteg
+                            </div>
+                            <div class="card-body">
+                                {% for zsteg in zsteg %}
+                                    <div class="text-white-75 text-monospace">{{ zsteg }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-4">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
+                                Pngcheck
+                            </div>
+                            <div class="card-body">
+                                {% for png in pngcheck %}
+                                    <div class="text-white-75 text-monospace">{{ png }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-4">
+                        <div class="card bg-dark text-white shadow">
+                            <div class="card-header font-weight-bold bg-primary">
+                                Stegsolve
+                            </div>
+                            <div class="card-body">
+                                <div class="text-white-75 text-monospace">{{ stegsolve }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
