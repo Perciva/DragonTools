@@ -25,6 +25,7 @@
     - [ ] pembagian tugas
 - [ ] produk
     - [ ] frontend
+        - [ ] font gedein
     - [ ] backend
         - [x] file upload
         - [ ] general
@@ -36,6 +37,7 @@
                 - [x] output
                 - [ ] table view
             - [ ] foremost
+                - [ ] output
             - [ ] virustotal
                 - [x] output
                 - [ ] list view
@@ -44,14 +46,10 @@
                 - [ ] table view
             - [ ] strings
                 - [x] output
-                - [ ] search
-                - [ ] preview
-                - [ ] full output download
+                - [ ] pake overflow: scroll
             - [ ] xxd
                 - [x] output
-                - [ ] search
-                - [ ] preview
-                - [ ] full output download
+                - [ ] pake overflow: scroll
         - [ ] image
             - [ ] steghide
             - [ ] zsteg
@@ -60,13 +58,12 @@
         - [ ] misc
             - [ ] tshark
                 - [ ] output
-                - [ ] search
-                - [ ] preview
-                - [ ] full output download
+                - [ ] pake overflow: scroll
 
 #### known issues
 
 ##### frontend
 - card colors are temporary, either make it random everytime, or static
+- font kekecilan / terlalu datar
 ##### backend
 - uploaded files are never deleted
