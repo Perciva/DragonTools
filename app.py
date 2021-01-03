@@ -67,7 +67,9 @@ def image():
 def misc():
 	try:
 		filename = "uploads/"+session['userfile']
-		return render_template('main/misc.html')
+		return render_template('main/misc.html',
+			tshark=tshark(filename)
+		)
 	except:
 		return render_template('main/misc.html')
 
