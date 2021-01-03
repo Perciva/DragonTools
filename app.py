@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, send_from_directory
 from lib.general import *
 from lib.image import *
 from lib.misc import *
@@ -76,6 +76,11 @@ def page404():
 	return render_template('errors/404.html',
 		title='404'
 	)
+
+# uploads
+@app.route('/uploads/<filename>')
+def uploads(filename):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == "__main__":
 	app.run(debug=True)
