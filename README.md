@@ -52,7 +52,7 @@
                 - [ ] pake overflow: scroll
         - [ ] image
             - [ ] steghide
-            - [ ] zsteg
+            - [x] zsteg
             - [x] pngcheck
             - [ ] stegsolve (???)
         - [ ] misc

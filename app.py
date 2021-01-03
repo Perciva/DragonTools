@@ -57,7 +57,8 @@ def image():
 		filename = "uploads/"+session['userfile']
 		return render_template('main/image.html',
 			title='Image',
-			pngcheck=pngcheck(filename)
+			pngcheck=pngcheck(filename),
+			zsteg=zsteg(filename)
 		)
 	except:
 		return render_template('main/image.html')
