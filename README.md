@@ -56,10 +56,10 @@
             - [x] zsteg
             - [x] pngcheck
             - [ ] stegsolve (???)
-        - [ ] misc
-            - [ ] tshark
+        - [x] misc
+            - [x] tshark
                 - [x] output
-                - [ ] pake overflow: scroll
+                - [x] pake overflow: scroll
         - [ ] donate
 
 #### known issues
