@@ -63,13 +63,15 @@
                             </div>
                         </div>
                     </div>
-                    {% if virustotal[0] > 0 %}
+                    {% if virustotal|length > 1 %}
                     <div class="col-lg-12 mb-4">
                         <div class="card bg-danger text-white shadow">
                             <div class="card-body">
                                 Virustotal
                                 <div class="text-white-75 small">{{ virustotal[0] }} positives out of {{ virustotal[1] }} total sources</div>
-                                <div class="text-white-75 small">Sources that says positives: {{ virustotal[3] }}</div>
+                                {% for result in virustotal[3] %}
+                                <div class="text-white-75 small">{{ result[0] }} that says it's: {{ result[1] }}</div>
+                                {% endfor %}
                                 <div class="text-white-75 small">Check straight from virustotal: <a href="{{ virustotal[2] }}">click here</a></div>
                             </div>
                         </div>

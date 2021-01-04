@@ -43,12 +43,15 @@ def virustotalCheck(fname):
 	url = 'https://www.virustotal.com/vtapi/v2/file/report'
 	params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
 	response = requests.get(url, params=params)
-	print(response.json())
 	if response.json()['response_code'] > 0:
 		found = []
 		for attr, value in response.json()['scans'].items():
 			if value['detected'] == True:
-				found.append(attr)
+				tmp = []
+				tmp.append(attr)
+				tmp.append(value['result'])
+				found.append(tmp)
+				print(found)
 		return response.json()['positives'], response.json()['total'], response.json()['permalink'], found
 	else:
 		return 0
