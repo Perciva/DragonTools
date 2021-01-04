@@ -40,13 +40,13 @@ def general():
 		filename = "uploads/"+session['userfile']
 		return render_template('main/general.html',
 			title='Dashboard',
-			exiftool=exiftool(filename),
+			# exiftool=exiftool(filename),
 			hashsum=hashsum(filename),
-			file=file(filename),
-			virustotal=virustotalCheck(filename),
-			strings=strings(filename),
-			binwalk=binwalk(filename),
-			xxd=xxd(filename)
+			# file=file(filename),
+			virustotal=virustotalCheck(filename)
+			# strings=strings(filename),
+			# binwalk=binwalk(filename),
+			# xxd=xxd(filename)
 		)
 	except:
 		return render_template('main/general.html')
@@ -78,6 +78,13 @@ def misc():
 def page404():
 	return render_template('errors/404.html',
 		title='404'
+	)
+
+# Donation
+@app.route('/donate')
+def donate():
+	return render_template('main/donate.html',
+		title='Donate'
 	)
 
 # uploads
