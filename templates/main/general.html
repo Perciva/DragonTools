@@ -70,11 +70,13 @@
                                 Virustotal
                             </div>
                             <div class="card-body">
-                                <div class="text-white-75 small">{{ virustotal[0] }} positives out of {{ virustotal[1] }} total sources</div>
+                                <div class="text-white-75 text-monospace">{{ virustotal[0] }} positives out of {{ virustotal[1] }} total sources</div>
                                 {% for result in virustotal[3] %}
-                                <div class="text-white-75 small">{{ result[0] }} that says it's: {{ result[1] }}</div>
+                                <div class="text-white-75 text-monospace">{{ result[0] }} that says it's: {{ result[1] }}</div>
                                 {% endfor %}
-                                <div class="text-white-75 small">Check straight from virustotal: <a href="{{ virustotal[2] }}">click here</a></div>
+                                <div class="text-white-75 text-monospace">Check straight from virustotal:
+                                    <a href="{{ virustotal[2] }}" class="text-white">click here</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -85,7 +87,7 @@
                                 Virustotal
                             </div>
                             <div class="card-body">
-                                <div class="text-white-75 small">Virustotal didn't find anything suspicious with this file</div>
+                                <div class="text-white-75 text-monospace">Virustotal didn't find anything suspicious with this file</div>
                             </div>
                         </div>
                     </div>

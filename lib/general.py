@@ -54,7 +54,7 @@ def virustotalCheck(fname):
 				print(found)
 		return response.json()['positives'], response.json()['total'], response.json()['permalink'], found
 	else:
-		return 0
+		return "0"
 
 def hashsum(fname):
 	return [['md5',md5(fname)], ['sha1',sha1(fname)], ['sha256',sha256(fname)]]
