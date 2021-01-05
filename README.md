@@ -1,6 +1,6 @@
 # DragonTools
 
-## Webservice apps that let's you do common enumeration on your file
+## Webapp that let's you do common analysis on your file
 
 ### Feature
 
@@ -22,7 +22,7 @@
 ### progress
 
 - [ ] laporan
-    - [ ] pembagian tugas
+    - [ ] screenshots
 - [ ] produk
     - [x] frontend
         - [x] font gedein
@@ -39,9 +39,9 @@
                 - [ ] table view
             - [ ] foremost
                 - [ ] output
-            - [ ] virustotal
+            - [x] virustotal
                 - [x] output
-                - [ ] list view
+                - [x] list view
             - [ ] hash sums
                 - [x] output
                 - [ ] table view
@@ -60,7 +60,7 @@
             - [x] tshark
                 - [x] output
                 - [x] pake overflow: scroll
-        - [ ] donate
+        - [x] donate
 
 #### known issues
 
