@@ -26,16 +26,20 @@ def allowed_file(filename):
 @app.route('/', methods=['GET', 'POST'])
 def index():
 	if request.method == 'POST':
-		file = request.files['file']
+		file = None
+		try:
+			file = request.files['file']
+		except:
+			pass
 		if file and file.filename != '' and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			# replace old session
 			session['userfile'] = filename
-
-	# tolong disini pin 		
-	# if request.method == 'GET':
-	# 	session['passphrase'] = passphrase
+		try:
+			session['passphrase'] = request.form['passphrase']
+		except:
+			pass
 	return render_template('index.html')
 
 @app.route('/general')
