@@ -35,7 +35,7 @@ def exiftool(fname):
 		"""
 
 		for z in range(len(kiri)):
-			
+
 			row = f"""
 				<tr style= "border: 1px white solid">
 					<td style= "border: 1px white solid">{kiri[z]}</td>
@@ -47,7 +47,7 @@ def exiftool(fname):
 		
 
 		table = table + "</table>"
-		print(table)
+		# print(table)
 		return table
 	return err.decode('utf-8').split('\n')
 
