@@ -21,7 +21,8 @@ def steghide(fname,passwd):
 	# if passwd == "":
 	# 	passwd = " "
 	#selain jpeg bmp langsung show error msg (?)
-	if (fname.endswith('jpeg') or fname.endswith('bmp')) == 0:
+	passwd = "Hai" #nanti di command aja
+	if (fname.endswith('jpeg') or fname.endswith('bmp')) == False:
 		return "steghide: could not extract any data with that passphrase!".split('\n')
 	else:
 		args = ['steghide', 'extract', '-sf', fname, '-p', passwd]
