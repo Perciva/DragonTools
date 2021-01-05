@@ -53,10 +53,15 @@
                             <div class="text-white-75">
                                 Passphrase:
                             </div>
-                            <form action="GET" enctype="multipart/form-data">
+                            <form method="POST" enctype="multipart/form-data">
                                 <input type="text" name="passphrase">
                                 <input type="submit" value="Upload">
                             </form>
+                            <div class="text-white-75">
+                                {% if session['passphrase'] %}
+                                    Current passphrase is <b>{{ session['passphrase'] }}</b>
+                                {% endif %}
+                            </div>
                         </div>
                         <div class="card-footer bg-primary">
                             <div class="text-white-75">
