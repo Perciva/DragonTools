@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    {% if virustotal|length > 1 %}
+                    {% if virustotal|length == 4 %}
                     <div class="col-lg-12 mb-4">
                         <div class="card bg-dark text-white shadow">
                             <div class="card-header font-weight-bold bg-danger">
@@ -87,7 +87,7 @@
                                 Virustotal
                             </div>
                             <div class="card-body">
-                                <div class="text-white-75 text-monospace">Virustotal didn't find anything suspicious with this file</div>
+                                <div class="text-white-75 text-monospace">{{ virustotal }}</div>
                             </div>
                         </div>
                     </div>
