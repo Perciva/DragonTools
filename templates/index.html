@@ -18,36 +18,50 @@
                 </div>
                 <div class="card-body">
                     DragonTools is a web application that let's you do common
-                    analysis on your file
+                    analysis on your files.
                 </div>
             </div>
             <!-- Color System -->
-            <div class="col-lg-12 mb-4">
-                <div class="card bg-success text-white shadow">
-                    <div class="card-body">
-                        {% if session['userfile'] %}
-                        <p>Your recently uploaded file name is "{{ session['userfile'] }}"</p>
-                        <img src="{{ url_for('uploads', filename=session['userfile']) }}"
-                            style="max-width: 100%; margin-bottom: 1em;"
-                            alt="No preview available.">
-                        <br>
-                        <div class="text-white-75">
-                            You can now start analyzing your files with the menu
-                            on your left, or you can upload a new file
+            <div class="row"> 
+                <div class="col-lg-12 mb-4">
+                    <div class="card bg-dark text-white shadow">
+                        <div class="card-header font-weight-bold bg-primary">
+                            File upload
                         </div>
-                        <p></p>
-                        <p>Upload a new file</p>
-                        {% else %}
-                        <p>Upload a file</p>
+                        {% if session['userfile'] %}
+                            <div class="card-body">
+                                <p>Your recently uploaded file name is <b>{{ session['userfile'] }}</b></p>
+                                <img src="{{ url_for('uploads', filename=session['userfile']) }}"
+                                    style="max-width: 100%; margin-bottom: 1em;"
+                                    alt="No preview available.">
+                            </div>
                         {% endif %}
-                        <div class="text-white-75">
+                        <div class="card-body" style="border-top: white 1px solid;">
+                            <div class="text-white-75">
+                                Upload a
+                                {% if session['userfile'] %}
+                                    new
+                                {% endif %}
+                                file
+                            </div>
                             <form method="POST" enctype="multipart/form-data">
                                 <input type="file" name="file">
                                 <input type="submit" value="Upload">
                             </form>
                         </div>
+                        <div class="card-footer bg-primary">
+                            <div class="text-white-75">
+                                {% if session['userfile'] %}
+                                    You can now start analyzing your files with the menu
+                                    on your left, or you can upload a new file.
+                                {% else %}
+                                    You need to upload a file first before using our
+                                    analysis tools.
+                                {% endif %}
+                            </div>
+                        </div>
                     </div>
-                </div>
+            </div>
             </div>
         </div>
     </div>

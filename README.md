@@ -1,6 +1,6 @@
 # DragonTools
 
-## Webapp that let's you do common analysis on your file
+## Webapp that let's you do common analysis on your files
 
 ### Feature
 
