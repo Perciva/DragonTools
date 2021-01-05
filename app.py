@@ -16,7 +16,7 @@ ALLOWED_EXTENSIONS = {
 		'txt', 'pdf',
 		'png', 'jpg', 'jpeg', 'gif',
 		'pcap', 'pcapng',
-		'zip', 'rar'
+		'zip', 'rar', 'wav'
 	}
 def allowed_file(filename):
     return '.' in filename and \

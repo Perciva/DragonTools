@@ -21,12 +21,12 @@ def steghide(fname,passwd):
 	# if passwd == "":
 	# 	passwd = " "
 	#selain jpeg bmp langsung show error msg (?)
-	args = ['steghide', 'extract', '-sf', fname, '-p', passwd]
-	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
-	out,err = proc.communicate()
-	# args2 = ['y']
-	# proc = subprocess.Popen(args2, stdout=subprocess.PIPE, shell=False)
-	# out2,err2 = proc.communicate()
-	if out:
-		return out
-	return err2
+	if (fname.endswith('jpeg') or fname.endswith('bmp')) == 0:
+		return "steghide: could not extract any data with that passphrase!".split('\n')
+	else:
+		args = ['steghide', 'extract', '-sf', fname, '-p', passwd]
+		proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
+		out,err = proc.communicate()
+		if out:
+			return out
+		return err

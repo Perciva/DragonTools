@@ -22,7 +22,9 @@
                                 Steghide
                             </div>
                             <div class="card-body">
+                                {%  for file in steghide %}
                                 <div class="text-white-75 text-monospace">{{ file }}</div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
