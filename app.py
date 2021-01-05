@@ -48,6 +48,7 @@ def general():
 			hashsum=hashsum(filename),
 			file=file(filename),
 			virustotal=virustotalCheck(filename),
+			foremost=foremost(filename),
 			strings=strings(filename),
 			binwalk=binwalk(filename),
 			xxd=xxd(filename)
