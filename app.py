@@ -39,7 +39,7 @@ def general():
 	try:
 		filename = "uploads/"+session['userfile']
 		return render_template('main/general.html',
-			title='Dashboard',
+			title='General',
 			exiftool=exiftool(filename),
 			hashsum=hashsum(filename),
 			file=file(filename),
@@ -68,6 +68,7 @@ def misc():
 	try:
 		filename = "uploads/"+session['userfile']
 		return render_template('main/misc.html',
+			title='Miscellaneous',
 			tshark=tshark(filename)
 		)
 	except:
