@@ -49,6 +49,15 @@
                                 <input type="submit" value="Upload">
                             </form>
                         </div>
+                        <div class="card-body" style="border-top: white 1px solid;">
+                            <div class="text-white-75">
+                                Passphrase:
+                            </div>
+                            <form action="GET" enctype="multipart/form-data">
+                                <input type="text" name="passphrase">
+                                <input type="submit" value="Upload">
+                            </form>
+                        </div>
                         <div class="card-footer bg-primary">
                             <div class="text-white-75">
                                 {% if session['userfile'] %}

@@ -62,7 +62,7 @@ def hashsum(fname):
 	return [['md5',md5(fname)], ['sha1',sha1(fname)], ['sha256',sha256(fname)]]
 
 def strings(fname):
-	args = ['strings', fname, '| tail']
+	args = ['strings', fname]
 	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
 	out, err = proc.communicate()
 	if out:

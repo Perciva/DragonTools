@@ -32,6 +32,10 @@ def index():
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			# replace old session
 			session['userfile'] = filename
+
+	# tolong disini pin 		
+	# if request.method == 'GET':
+	# 	session['passphrase'] = passphrase
 	return render_template('index.html')
 
 @app.route('/general')
@@ -55,10 +59,12 @@ def general():
 def image():
 	try:
 		filename = "uploads/"+session['userfile']
+		passphrase = "Hai"
 		return render_template('main/image.html',
 			title='Image',
 			pngcheck=pngcheck(filename),
-			zsteg=zsteg(filename)
+			zsteg=zsteg(filename),
+			steghide=steghide(filename, passphrase)
 		)
 	except:
 		return render_template('main/image.html')

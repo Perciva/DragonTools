@@ -17,7 +17,6 @@
 |steghide|extract hidden message on your image file|
 |pngcheck|test PNG image files for corruption, display size, type, compression info|
 |zsteg|check for hidden message in lsb or msb|
-|stegsolve|check rgb spectrum|
 
 ### progress
 
@@ -55,7 +54,6 @@
             - [ ] steghide
             - [x] zsteg
             - [x] pngcheck
-            - [ ] stegsolve (???)
         - [x] misc
             - [x] tshark
                 - [x] output
