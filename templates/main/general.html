@@ -33,9 +33,9 @@
                                 Exiftool
                             </div>
                             <div class="card-body">
-                                {% for exif in exiftool %}
-                                    <div class="text-white-75 text-monospace">{{ exif }}</div>
-                                {% endfor %}
+
+                                    <div class="text-white-75 text-monospace">{{ exiftool |safe}}</div>
+                         
                             </div>
                         </div>
                     </div>
@@ -45,9 +45,9 @@
                                 Binwalk
                             </div>
                             <div class="card-body">
-                                {% for b in binwalk %}
-                                    <div class="text-white-75 text-monospace">{{ b }}</div>
-                                {% endfor %}
+              
+                                    <div class="text-white-75 text-monospace">{{ binwalk |safe}}</div>
+
                             </div>
                         </div>
                     </div>
@@ -98,9 +98,9 @@
                                 HashSum
                             </div>
                             <div class="card-body">
-                                {% for hash in hashsum %}
-                                    <div class="text-white-75 text-monospace">{{ hash[0] }} : {{ hash[1] }}</div>
-                                {% endfor %}
+                                
+                                    <div class="text-white-75 text-monospace">{{hashsum | safe}}</div>
+                                
                             </div>
                         </div>
                     </div>
