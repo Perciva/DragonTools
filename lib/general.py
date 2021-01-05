@@ -41,8 +41,9 @@ def foremost(fname):
 def virustotalCheck(fname):
 	sha256sum = sha256(fname)
 	url = 'https://www.virustotal.com/vtapi/v2/file/report'
-	params = {'apikey': '6201732de559c1e9c089e897ce858f0df21efb98f417e51c5ec6a08031abcf6e', 'resource': sha256sum}
+	params = {'apikey': '6f24efbef7ddb97cc5c19e528f086afd7578b44383c73d4aacfa854d0e73bb39', 'resource': sha256sum}
 	response = requests.get(url, params=params)
+	print(response.json())
 	if response.json()['verbose_msg'] == "The requested resource is not among the finished, queued or pending scans":
 		return "Please wait a few minutes for another request, your request has been sent to the queue"
 
