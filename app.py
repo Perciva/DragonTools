@@ -63,8 +63,7 @@ def image():
 		return render_template('main/image.html',
 			title='Image',
 			pngcheck=pngcheck(filename),
-			zsteg=zsteg(filename),
-			steghide=steghide(filename, passphrase)
+			zsteg=zsteg(filename)
 		)
 	except:
 		return render_template('main/image.html')
