@@ -27,7 +27,7 @@
         - [x] warna yg konsisten
     - [ ] backend
         - [x] file upload
-        - [ x general
+        - [x] general
             - [x] file
             - [x] exiftool
                 - [x] output
