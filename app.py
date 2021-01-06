@@ -36,10 +36,6 @@ def index():
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			# replace old session
 			session['userfile'] = filename
-		try:
-			session['passphrase'] = request.form['passphrase']
-		except:
-			pass
 	return render_template('index.html')
 
 @app.route('/general')
