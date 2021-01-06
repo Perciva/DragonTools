@@ -30,20 +30,20 @@
         - [x] file upload
         - [ ] general
             - [x] file
-            - [ ] exiftool
+            - [x] exiftool
                 - [x] output
-                - [ ] table view
-            - [ ] binwalk
+                - [x] table view
+            - [x] binwalk
                 - [x] output
-                - [ ] table view
+                - [x] table view
             - [ ] foremost
                 - [ ] output
             - [x] virustotal
                 - [x] output
                 - [x] list view
-            - [ ] hash sums
+            - [x] hash sums
                 - [x] output
-                - [ ] table view
+                - [x] table view
             - [x] strings
                 - [x] output
                 - [x] pake overflow: scroll
