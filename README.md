@@ -19,8 +19,8 @@
 
 ### progress
 
-- [ ] laporan
-    - [ ] screenshots
+- [x] laporan
+    - [x] screenshots
 - [x] produk
     - [x] frontend
         - [x] font gedein
