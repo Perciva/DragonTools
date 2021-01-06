@@ -9,7 +9,6 @@
 |file|to check what exactly your file is|
 |exiftool|to check the metadata of your file|
 |binwalk|to check if there is a hidden file inside|
-|foremost|to extract the hidden file|
 |strings|to check hidden string text|
 |hashsum|integrity check|
 |hexdump|simple check of what your file is made of|
@@ -28,22 +27,20 @@
         - [x] warna yg konsisten
     - [ ] backend
         - [x] file upload
-        - [ ] general
+        - [ x general
             - [x] file
-            - [ ] exiftool
+            - [x] exiftool
                 - [x] output
-                - [ ] table view
-            - [ ] binwalk
+                - [x] table view
+            - [x] binwalk
                 - [x] output
-                - [ ] table view
-            - [ ] foremost
-                - [ ] output
+                - [x] table view
             - [x] virustotal
                 - [x] output
                 - [x] list view
-            - [ ] hash sums
+            - [x] hash sums
                 - [x] output
-                - [ ] table view
+                - [x] table view
             - [x] strings
                 - [x] output
                 - [x] pake overflow: scroll
