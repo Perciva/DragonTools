@@ -48,7 +48,6 @@ def general():
 			hashsum=hashsum(filename),
 			file=file(filename),
 			virustotal=virustotalCheck(filename),
-			foremost=foremost(filename),
 			strings=strings(filename),
 			binwalk=binwalk(filename),
 			xxd=xxd(filename)
@@ -60,7 +59,7 @@ def general():
 def image():
 	try:
 		filename = "uploads/"+session['userfile']
-		passphrase = "Hai"
+		passphrase = session['passphrase']
 		return render_template('main/image.html',
 			title='Image',
 			pngcheck=pngcheck(filename),

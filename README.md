@@ -9,7 +9,6 @@
 |file|to check what exactly your file is|
 |exiftool|to check the metadata of your file|
 |binwalk|to check if there is a hidden file inside|
-|foremost|to extract the hidden file|
 |strings|to check hidden string text|
 |hashsum|integrity check|
 |hexdump|simple check of what your file is made of|
@@ -22,13 +21,13 @@
 
 - [ ] laporan
     - [ ] screenshots
-- [ ] produk
+- [x] produk
     - [x] frontend
         - [x] font gedein
         - [x] warna yg konsisten
-    - [ ] backend
+    - [x] backend
         - [x] file upload
-        - [ ] general
+        - [x] general
             - [x] file
             - [x] exiftool
                 - [x] output
@@ -36,8 +35,6 @@
             - [x] binwalk
                 - [x] output
                 - [x] table view
-            - [ ] foremost
-                - [ ] output
             - [x] virustotal
                 - [x] output
                 - [x] list view
@@ -50,8 +47,7 @@
             - [x] xxd
                 - [x] output
                 - [x] pake overflow: scroll
-        - [ ] image
-            - [ ] steghide
+        - [x] image
             - [x] zsteg
             - [x] pngcheck
         - [x] misc
