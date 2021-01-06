@@ -76,17 +76,6 @@ def binwalk(fname):
 		return table
 	return err.decode('utf-8').split('\n')
 
-def foremost(fname):
-	args = ['foremost', fname]
-	proc = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
-	#args2 = ['strings', '/output/audit.txt']
-	#proc2 = subprocess.Popen(args, stdout=subprocess.PIPE, shell=False)
-	out, err = proc.communicate()
-	if out:
-		return out.decode('utf-8').split('\n')
-	return err.decode('utf-8').split('\n')
-
-
 def virustotalCheck(fname):
 	try:
 		sha256sum = sha256(fname)
